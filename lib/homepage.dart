@@ -27,15 +27,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: ListView(
-          children: [
-            MainBody(jobsForYou: jobsForYou, recentJobs: recentJobs),
-          ],
-        ),
-      ),
+      body: MainBody(jobsForYou: jobsForYou, recentJobs: recentJobs),
     );
   }
 }
@@ -77,7 +69,7 @@ class MainBody extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 50,
+          height: 25,
         ),
 
         //discover a new path
@@ -157,7 +149,7 @@ class MainBody extends StatelessWidget {
         const SizedBox(height: 25),
 
         SizedBox(
-          height: 140,
+          height: 130,
           child: ListView.builder(
               itemCount: jobsForYou.length,
               scrollDirection: Axis.horizontal,
@@ -181,12 +173,12 @@ class MainBody extends StatelessWidget {
           padding: EdgeInsets.only(left: 25),
           child: Text(
             'Recently Added',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
 
         const SizedBox(
-          height: 25,
+          height: 10,
         ),
 
         Expanded(
