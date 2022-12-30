@@ -31,7 +31,7 @@ class JobCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    height: 60,
+                    height: 50,
                     child: Image.asset(logoImagePath),
                   ),
                   ClipRRect(
@@ -52,7 +52,7 @@ class JobCard extends StatelessWidget {
                 child: Text(
                   jobTitle,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 24),
+                      fontWeight: FontWeight.bold, fontSize: 22),
                 ),
               ),
               Text('\$ ${hourlyRate.toString()}/hr'),

@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+<<<<<<< HEAD
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -65,6 +66,12 @@ class _HomePageState extends State<HomePage> {
                         child: Image.asset('lib/icons/menu_from_left.png'),
                       )),
                 ),
+=======
+      body: MainBody(jobsForYou: jobsForYou, recentJobs: recentJobs),
+    );
+  }
+}
+>>>>>>> 8abe841989b766e70be04b81492b1e5a8d5c05d6
 
                 const SizedBox(
                   height: 50,
@@ -83,8 +90,52 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 10),
                 //search bar
 
+<<<<<<< HEAD
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
+=======
+        Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: Container(
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white),
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.grey[200],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: Image.asset('lib/icons/menu_from_left.png'),
+              )),
+        ),
+
+        const SizedBox(
+          height: 25,
+        ),
+
+        //discover a new path
+
+        const Padding(
+          padding: EdgeInsets.only(left: 25),
+          child: Text(
+            'Discover a New Path',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+          ),
+        ),
+
+        const SizedBox(height: 10),
+        //search bar
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(12)),
+>>>>>>> 8abe841989b766e70be04b81492b1e5a8d5c05d6
                   child: Row(
                     children: [
                       Expanded(
@@ -199,8 +250,76 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+<<<<<<< HEAD
         ],
       ),
+=======
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+
+        //for you --> job cards
+
+        const Padding(
+          padding: EdgeInsets.only(left: 25),
+          child: Text(
+            'For You',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+          ),
+        ),
+
+        const SizedBox(height: 25),
+
+        SizedBox(
+          height: 130,
+          child: ListView.builder(
+              itemCount: jobsForYou.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return JobCard(
+                  companyName: jobsForYou[index][0],
+                  jobTitle: jobsForYou[index][1],
+                  logoImagePath: jobsForYou[index][2],
+                  hourlyRate: jobsForYou[index][3],
+                );
+              }),
+        ),
+
+        //recently add --> job tiles
+
+        const SizedBox(
+          height: 30,
+        ),
+
+        const Padding(
+          padding: EdgeInsets.only(left: 25),
+          child: Text(
+            'Recently Added',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+        ),
+
+        const SizedBox(
+          height: 10,
+        ),
+
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: ListView.builder(
+              itemCount: recentJobs.length,
+              itemBuilder: (context, index) {
+                return RecentJobCards(
+                  companyName: recentJobs[index][0],
+                  jobTitle: recentJobs[index][1],
+                  logoImagePath: recentJobs[index][2],
+                  hourlyRate: recentJobs[index][3],
+                );
+              }),
+        )),
+      ],
+>>>>>>> 8abe841989b766e70be04b81492b1e5a8d5c05d6
     );
   }
 }
