@@ -21,181 +21,186 @@ class _HomePageState extends State<HomePage> {
     ['Nike', 'Web Designer', 'lib/icons/nike.png', 20],
     ['Google', 'Product Dev', 'lib/icons/google.png', 80],
     ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
+    ['Apple', 'Software Eng.', 'lib/icons/apple.png', 95],
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: MainBody(jobsForYou: jobsForYou, recentJobs: recentJobs),
-    );
-  }
-}
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: Image.asset('lib/icons/menu_from_left.png'),
+                      )),
+                ),
 
-class MainBody extends StatelessWidget {
-  const MainBody({
-    Key? key,
-    required this.jobsForYou,
-    required this.recentJobs,
-  }) : super(key: key);
+                const SizedBox(
+                  height: 50,
+                ),
 
-  final List jobsForYou;
-  final List recentJobs;
+                //discover a new path
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        //app bar
+                const Padding(
+                  padding: EdgeInsets.only(left: 25),
+                  child: Text(
+                    'Discover a New Path',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                  ),
+                ),
 
-        const SizedBox(
-          height: 40,
-        ),
+                const SizedBox(height: 10),
+                //search bar
 
-        Padding(
-          padding: const EdgeInsets.only(left: 25),
-          child: Container(
-              height: 50,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.grey[200],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Image.asset('lib/icons/menu_from_left.png'),
-              )),
-        ),
-
-        const SizedBox(
-          height: 25,
-        ),
-
-        //discover a new path
-
-        const Padding(
-          padding: EdgeInsets.only(left: 25),
-          child: Text(
-            'Discover a New Path',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
-          ),
-        ),
-
-        const SizedBox(height: 10),
-        //search bar
-
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(12)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: SizedBox(
-                          height: 30,
-                          child: Image.asset('lib/icons/search.png'),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0),
+                                child: SizedBox(
+                                  height: 30,
+                                  child: Image.asset('lib/icons/search.png'),
+                                ),
+                              ),
+                              const Expanded(
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: 'Search for a job..',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      const Expanded(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Search for a job..',
+                      const SizedBox(width: 10),
+                      Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[900],
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'lib/icons/preferences.png',
+                            color: Colors.white,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
-              Container(
-                height: 50,
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    borderRadius: BorderRadius.circular(12)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'lib/icons/preferences.png',
-                    color: Colors.white,
+                const SizedBox(
+                  height: 30,
+                ),
+
+                //for you --> job cards
+
+                const Padding(
+                  padding: EdgeInsets.only(left: 25),
+                  child: Text(
+                    'For You',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
                   ),
                 ),
-              ),
-            ],
+
+                const SizedBox(height: 25),
+
+                SizedBox(
+                  height: 140,
+                  child: ListView.builder(
+                      itemCount: jobsForYou.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return JobCard(
+                          companyName: jobsForYou[index][0],
+                          jobTitle: jobsForYou[index][1],
+                          logoImagePath: jobsForYou[index][2],
+                          hourlyRate: jobsForYou[index][3],
+                        );
+                      }),
+                ),
+
+                //recently add --> job tiles
+
+                const SizedBox(
+                  height: 30,
+                ),
+
+                const Padding(
+                  padding: EdgeInsets.only(left: 25),
+                  child: Text(
+                    'Recently Added',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 25,
+                ),
+
+                SizedBox(
+                    height: MediaQuery.of(context).size.height -
+                        150, // 150 is only for user experience
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: ListView.builder(
+                          itemCount: recentJobs.length,
+                          itemBuilder: (context, index) {
+                            return RecentJobCards(
+                              companyName: recentJobs[index][0],
+                              jobTitle: recentJobs[index][1],
+                              logoImagePath: recentJobs[index][2],
+                              hourlyRate: recentJobs[index][3],
+                            );
+                          }),
+                    )),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-
-        //for you --> job cards
-
-        const Padding(
-          padding: EdgeInsets.only(left: 25),
-          child: Text(
-            'For You',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
-          ),
-        ),
-
-        const SizedBox(height: 25),
-
-        SizedBox(
-          height: 130,
-          child: ListView.builder(
-              itemCount: jobsForYou.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return JobCard(
-                  companyName: jobsForYou[index][0],
-                  jobTitle: jobsForYou[index][1],
-                  logoImagePath: jobsForYou[index][2],
-                  hourlyRate: jobsForYou[index][3],
-                );
-              }),
-        ),
-
-        //recently add --> job tiles
-
-        const SizedBox(
-          height: 30,
-        ),
-
-        const Padding(
-          padding: EdgeInsets.only(left: 25),
-          child: Text(
-            'Recently Added',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-        ),
-
-        const SizedBox(
-          height: 10,
-        ),
-
-        Expanded(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: ListView.builder(
-              itemCount: recentJobs.length,
-              itemBuilder: (context, index) {
-                return RecentJobCards(
-                  companyName: recentJobs[index][0],
-                  jobTitle: recentJobs[index][1],
-                  logoImagePath: recentJobs[index][2],
-                  hourlyRate: recentJobs[index][3],
-                );
-              }),
-        )),
-      ],
+        ],
+      ),
     );
   }
 }
